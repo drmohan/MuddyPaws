@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+/*####### Navigation #######*/
+
+.navbar {
+    overflow: hidden;
+    background-color: #383838;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    font-family: 'Lato', sans-serif;
+}
+
+.navbar a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px 35px;
+    padding-top: 20px;
+    padding-left: 10px;
+    text-decoration: none;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.logo {
+    float: left !important;
+    font-weight: bold;
+    font-size: 1.3em !important;
+}
+
+.logo span {
+    font-weight: bolder;
+}
+
+.active {
+    font-weight: bolder !important;
+}
+
+/*####### Home Page #######*/
+
+.content { 
+    padding-top: 70px;
+}
+
+
+.background_img {
+    background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../img/dog_hiking.jpg");
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 768px;
+    left: 0;
+    top: 65px;
+}
+
+.background_img h2 {
+    font-weight: 900;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    float: left;
+    font-size: 3.5em;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.background_img a {
+    font-weight: 900;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    text-decoration: none;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.25em;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.background_img button:hover {
+    cursor: pointer;
+}
+
+/*####### Main Products Page #######*/
+
+.page_title {
+    text-align: center;
+}
+
+.page_title h1 {
+    margin-bottom: 3px;
+}
+
+.page_title p {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin-top: 0px;
+}
+
+.page_items {
+    padding-top: 50px;
+    padding-left: 250px;
+}
+
+.page_items a {
+    color: black;
+}
+
+.item {
+    display: block;
+    float: left;
+    padding-right: 80px;
+    margin-bottom: 30px;
+}
+
+.item img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+}
+
+.item p {
+    text-align: center;
+}
+
+.product {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.details {
+    font-size: 15px;
+    margin-top: 0px;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+}
+
+/*####### Product Details Page #######*/
+
+.breadcrumb {
+    margin-top: 50px;
+}
+
+.product_details {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.product_details img {
+    width: 450px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+.product_img {
+    display: inline-block;
+    width: 50%;
+    float: left;
+}
+
+.product_title h2{
+    display: inline-block;
+    width: 50%;
+    float: left;
+    margin-bottom: 3px;
+}
+
+.product_details h4 {
+    margin-bottom: 0px;
+}
+
+.add_to_cart button {
+    font-weight: 900;
+    color: black;
+    background-color: transparent;
+    border-color: black;
+    margin-top: 50px;
+    font-size: 1em;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.add_to_cart button:hover {
+    cursor: pointer;
+}
+
+
+/*####### Info (About) Page #######*/
+
+.info_page{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.info_page p {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.info_page img {
+    width: 90px;
+}
+
