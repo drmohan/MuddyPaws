@@ -237,7 +237,7 @@
 
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 80% !important;
     margin: 5% 10%;
     text-align: left;    
 }
