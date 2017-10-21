@@ -4,11 +4,14 @@
     <meta charset="utf-8">
     <title>MuddyPaws</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </head>
   <body>
 
     <div class="navbar">
       <a class="logo" href="index.html"><span>Muddy</span>Paws</a>
+      <a href="cart.html"><img class="cart" src="assets/img/cart.png"><div id="cart_items"></div></a>
       <a href="about.html">About Us</a>
       <a href="all_products.html">All Products</a>
       <a href="#">Cats</a>
@@ -31,28 +34,31 @@
           <p class="details">Customizable collar with built in GPS to track your cat or your dog</p>
         </div>
 
-        <h4>Size</h4>
-        <select>
-          <option>Select Size</option>
-          <option>Tiny</option>
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
-        </select>
+        <form id="myForm">
+          <input id="product" type="hidden" name="product" value="Animal GPS Tracker Collar">
+          <h4>Size</h4>
+          <select required id="size">
+            <option value="">Select Size</option>
+            <option value="Tiny">Tiny</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+          </select>
 
-        <h4>Color</h4>
-        <select>
-          <option>Select Color</option>
-          <option>Strawberry</option>
-          <option>Blackberry</option>
-          <option>Crazyberry</option>
-          <option>Camouflage</option>
-          <option>Night Moon</option>
-          <option>Fire Orange</option>
-        </select>
+          <h4>Color</h4>
+          <select required id="color">
+            <option value="">Select Color</option>
+            <option value="Strawberry">Strawberry</option>
+            <option value="Blackberry">Blackberry</option>
+            <option value="Crazyberry">Crazyberry</option>
+            <option value="Camouflage">Camouflage</option>
+            <option value="Night Moon">Night Moon</option>
+            <option value="Fire Orange">Fire Orange</option>
+          </select>
 
+          <div class="add_to_cart"><button id="add" type="submit">Add to Cart</button></div>
+        </form>
 
-        <div class="add_to_cart"><button>Add to Cart</button></div>
 
       </div> 
     </div>
