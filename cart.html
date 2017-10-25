@@ -5,7 +5,6 @@
     <title>MuddyPaws</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/js/cart.js"></script>
     <script src="assets/js/main.js"></script>
   </head>
   <body>
@@ -23,9 +22,8 @@
       <h1 class="page_title">My Cart</h1>
 
       <div id="all_items">
-        <table id="my_table" style="width:100%">
+        <table id="my_table">
           <tr>
-            <th></th>
             <th>Product</th>
             <th>Size</th> 
             <th>Color</th>
@@ -34,7 +32,25 @@
             <th></th>
           </tr>
         </table>
+
+        <div class="total">
+          <h3>Total</h3>
+          <div id="total_price"></div>
+        </div>
       </div>
+
+      <div class="wishlist">
+        <h2 class="page_title">My Wishlist</h2>
+          <!-- <ul id="wishlist"></ul> -->
+          <table id="wishlist">
+            <tr>
+              <th>Product</th>
+              <th>Size</th> 
+              <th>Color</th>
+            </tr>
+        </table>
+      </div>
+
     </div>
   </body>
 </html>

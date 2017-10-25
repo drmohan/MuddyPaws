@@ -34,6 +34,7 @@
 
 .logo span {
     font-weight: bolder;
+    margin-left: 20px;
 }
 
 .cart {
@@ -56,6 +57,7 @@
 
 .content { 
     padding-top: 70px;
+    padding-bottom: 200px;
 }
 
 
@@ -163,6 +165,22 @@
     font-weight: lighter;
 }
 
+.selection p{
+    font-size: 17px;
+    font-family: 'Lato', sans-serif;
+    display: inline;
+}
+
+.selection {
+    margin-bottom: 15px;
+}
+
+.product_form select{
+    border: 1px solid gray;
+    width: 120px;
+    height: 20px;
+}
+
 /*####### Product Details Page #######*/
 
 .breadcrumb {
@@ -178,6 +196,7 @@
     width: 450px;
     border-radius: 15px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 }
 
 .product_img {
@@ -197,13 +216,18 @@
     margin-bottom: 0px;
 }
 
+.add_to_cart, .add_to_wishlist {
+    display: table-cell;
+}
+
 .add_to_cart button {
     font-weight: 900;
     color: black;
     background-color: transparent;
     border-color: black;
     margin-top: 50px;
-    font-size: 1em;
+    margin-right: 5px;
+    font-size: 0.75em;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
     font-weight: lighter;
@@ -212,8 +236,31 @@
 
 .add_to_cart button:hover {
     cursor: pointer;
+    font-weight: bolder;
 }
 
+.add_to_wishlist button {
+    font-weight: 900;
+    color: black;
+    background-color: transparent;
+    border-color: black;
+    margin-top: 50px;
+    margin-right: 5px;
+    font-size: 0.75em;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.add_to_wishlist button:hover {
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.submit {
+    display: table-row;
+}
 
 /*####### Info (About) Page #######*/
 
@@ -231,6 +278,47 @@
 
 .info_page img {
     width: 90px;
+}
+
+/* Related Items Carousel*/
+
+.related_items {
+    padding-top: 50px;
+    padding-left: 250px;
+    border-top: 1px solid gray; 
+}
+
+.related_items a {
+    color: black;
+}
+
+.related_item {
+    display: block;
+    float: left;
+    padding-right: 80px;
+    margin-bottom: 20px;
+}
+
+.related_item img {
+    width: 150px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+.arrow img {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+    margin-top: 50px;
+}
+
+.related_item p {
+    text-align: center;
+    width: 150px;
+}
+
+.not_in_view {
+    display: none;
 }
 
 /*####### Cart Page #######*/
@@ -259,7 +347,31 @@ th {
     font-weight: bold;
 }
 
+.id_column {
+    display: none;
+}
 
+.remove {
+    cursor: pointer;
+}
 
+.total {
+    margin-left: 76%;
+}
 
+#total_price {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+    font-size: 1.15em;
+}
+
+.wishlist {
+    width: 80%;
+    margin: 5% 10%;
+}
+
+.wishlist_item {
+    font-family: 'Lato', sans-serif;
+    font-weight: lighter;
+}
 

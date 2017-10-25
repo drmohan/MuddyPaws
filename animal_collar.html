@@ -25,16 +25,22 @@
         </div>
 
         <div class="product_img">
-          <img src="https://i.ytimg.com/vi/PAv59eWwQkI/maxresdefault.jpg">
+          <img id="product_img_detail" src="assets/img/nightMoon.jpg">
+          <p class="details">Model wears size Medium</p>
         </div>
 
         <div class="product_title">
           <h2>Animal GPS Tracker Collar</h2>
-          <p class="details">$30</p>
+
+          <div class="selection">
+            <p id="selected_size"></p>
+            <p id="selected_color"></p>
+            <h3 id="selected_price">$5 - $66</h3>
+          </div>
           <p class="details">Customizable collar with built in GPS to track your cat or your dog</p>
         </div>
 
-        <form id="myForm">
+        <form id="product_form" class="product_form">
           <input id="product" type="hidden" name="product" value="Animal GPS Tracker Collar">
           <h4>Size</h4>
           <select required id="size">
@@ -56,12 +62,63 @@
             <option value="Fire Orange">Fire Orange</option>
           </select>
 
-          <div class="add_to_cart"><button id="add" type="submit">Add to Cart</button></div>
+          <div class="submit">
+            <div class="add_to_cart"><button id="add_to_cart" type="submit">Add to Cart</button></div>
+            <div class="add_to_wishlist"><button id="add_to_wishlist" type="button">Add to Wishlist</button></div>
+          </div>
         </form>
-
 
       </div> 
     </div>
+
+    <div class="related_items"> 
+      <h3>Related Items</h3>
+
+      <a href="#" id="shift_left">
+        <div class="related_item arrow">
+          <img src="http://www.vareninzwolle.nl/assets/images/icon%20backward.png">
+        </div>
+      </a>
+
+      <a  id="one" href="dog_harness.html">
+        <div class="related_item">
+          <img src="https://cdn.noths-static.com/fs/15/78/2748-550f-4531-aa82-f87bc7dedad6/original_soft-tweed-dog-harness.jpg">
+          <p class="product">Dog Harness</p>
+          <p class="details">6 colors</p>
+        </div>
+      </a>
+
+      <a  id="two" href="dog_storage.html">
+        <div class="related_item">
+          <img src="https://media.mnn.com/assets/images/2014/10/JJH_8943-1%20copy.jpg">
+          <p class="product">Dog Food and Water Storage</p>
+          <p class="details">6 colors</p>
+        </div>
+      </a>
+
+      <a  id="three" href="animal_collar.html">
+        <div class="related_item">
+          <img src="http://www.chocolatecats.com/i/bottlebabies.jpg">
+          <p class="product">Cat Food and Water Storage</p>
+          <p class="details">6 colors</p>
+        </div>
+      </a>
+
+      <a id="four" class="not_in_view" href="animal_collar.html">
+        <div class="related_item">
+          <img src="http://www.adventurecats.org/wp-content/uploads/2015/09/harness1.jpg">
+          <p class="product">Cat Harness</p>
+          <p class="details">6 colors</p>
+        </div>
+      </a>
+
+      <a href="#" id="shift_right">
+        <div class="related_item arrow">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Next_Arrow.svg/1000px-Next_Arrow.svg.png">
+        </div>
+      </a>
+
+    </div> <!-- end page_items -->
 
 
   </body>

@@ -5,17 +5,38 @@ function getCartSize() {
         var key = keys[i]
         var item = JSON.parse(localStorage.getItem(key));
         var quantity = item.quantity;
-        console.log(quantity)
         total += quantity
     }
     return total
 }
 
-$(document).ready(function() {
+function getTotalPrice() {
+    var keys = Object.keys(localStorage);
+    var total = 0;
+    for (var i = 0; i < keys.length; i++){
+        var key = keys[i]
+        var item = JSON.parse(localStorage.getItem(key));
+        var quantity = item.quantity;
+        var price = item.price
+        total += quantity * price
+    }
+    return total
+}
 
+function updateTotal() {
+    var total_price = getTotalPrice();
+    $('#total_price').text("$" + total_price)
+}
+
+function updateCartCount() {
     var cartSize = getCartSize();
     $('#cart_items').text(cartSize);
+}
 
+$(document).ready(function() {
+
+    updateCartCount();
+    updateTotal();
 
     var keys = Object.keys(localStorage);
     for (var i = 0; i < keys.length; i++){
@@ -28,8 +49,9 @@ $(document).ready(function() {
         var size = item.size;
         var color = item.color;
         var quantity = item.quantity;
+        var price = item.price;
 
-        var html = "<tr><td>" + id + "</td><td>" + product + "</td><td>" + size + "</td><td>" + color + "</td><td>" + quantity + "</td><td>" + "$10.80" + "</td><td class='remove'>x</td></tr>"
+        var html = "<tr><td>" + id + "</td><td>" + product + "</td><td>" + size + "</td><td>" + color + "</td><td>" + quantity + "</td><td>$" + price + "</td><td class='remove'>x</td></tr>"
  
         $("#my_table").append(html);
     }
@@ -49,8 +71,8 @@ $(document).ready(function() {
             parent[0].cells[4].innerHTML = JSON.parse(localStorage.getItem(to_remove)).quantity
         }
         
-        cartSize = getCartSize();
-        $('#cart_items').text(cartSize);
+        updateCartCount();
+        updateTotal();
     });
 
 });
