@@ -368,6 +368,7 @@ th {
 .wishlist {
     width: 80%;
     margin: 5% 10%;
+    border: 1px solid gray;
 }
 
 .wishlist_item {

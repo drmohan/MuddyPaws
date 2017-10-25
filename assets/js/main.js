@@ -1,3 +1,4 @@
+// Draw table with items in cart 
 function loadCartItems() {
     var keys = Object.keys(localStorage);
     for (var i = 0; i < keys.length-1; i++){
@@ -18,6 +19,7 @@ function loadCartItems() {
     }
 }
 
+// Draw table with items in wishlist 
 function loadWishlistItems() {
     var wishlist = JSON.parse(localStorage.getItem('wishlist'));
     if (wishlist) {
@@ -37,6 +39,7 @@ function loadWishlistItems() {
     }
 }
 
+// Get number of items in cart
 function getCartSize() {
     var keys = Object.keys(localStorage);
     var total = 0;
@@ -44,12 +47,12 @@ function getCartSize() {
         var key = keys[i]
         var item = JSON.parse(localStorage.getItem(key));
         var quantity = item.quantity;
-        console.log(quantity)
         total += quantity
     }
     return total
 }
 
+// Return price of given item (function of size and color)
 function getPrice(product, size, color) {
 
     var sizes = {
@@ -72,6 +75,7 @@ function getPrice(product, size, color) {
     
 }
 
+// Return total of all items in cart
 function getTotalPrice() {
     var keys = Object.keys(localStorage);
     var total = 0;
@@ -85,16 +89,20 @@ function getTotalPrice() {
     return total
 }
 
+// Update total price of items in cart
 function updateTotal() {
     var total_price = getTotalPrice();
     $('#total_price').text("$" + total_price)
 }
 
+// Update count of items in cart (# next to cart icon)
 function updateCartCount() {
     var cartSize = getCartSize();
     $('#cart_items').text(cartSize);
 }
 
+// Update image on product detail page to reflect 
+// color selection
 function updateImage(color) {
 
     sources = {
@@ -120,6 +128,7 @@ function updateImage(color) {
     $("#product_img_detail").attr('src', sources[color]);
 }
 
+// Returns id if product is in cart, null if not
 function productInCart(product, size, color) {
     
     var keys = Object.keys(localStorage);
@@ -142,6 +151,7 @@ $(document).ready(function() {
     loadCartItems(); 
     loadWishlistItems();
 
+    // add details of item to wishlist object in localStorage
     $("#add_to_wishlist").bind( "click", function(e) {
         var product = $('#product').val();
         var size = $('#size').val();
@@ -176,6 +186,8 @@ $(document).ready(function() {
         localStorage.setItem('wishlist', JSON.stringify(wishlist))
     });
 
+    // update image and description text on selection 
+    // of each size or color
     $("#product_form").bind( "change", function(e) {
         var product = $('#product').val();
         var size = $('#size').val();
@@ -199,6 +211,7 @@ $(document).ready(function() {
         }
     });
 
+    // store selected item + size + color in localStorage
     $("#product_form").submit( "click", function(e) {
     	e.preventDefault();
 
@@ -232,10 +245,13 @@ $(document).ready(function() {
         var jsonItem = JSON.stringify(item);
     	localStorage.setItem(id, jsonItem);
 
+        // update cart and totals to reflect changes
         updateCartCount();
         updateTotal();  
 	});
 
+    // remove row from table on Cart page
+    // remove object from localStorage
     $('.remove').click( function() {
         var parent = $(event.target).parent();
         var to_remove = parent[0].cells[0].innerHTML;
@@ -255,6 +271,7 @@ $(document).ready(function() {
         updateTotal();
     });
 
+    // shift items in carousel to the right
     $('#shift_right').click(function(e) {
         e.preventDefault();
         var divs = ['#one', '#two', '#three', '#four']
@@ -265,6 +282,7 @@ $(document).ready(function() {
         $(divs[0]).html(temp)
     });
 
+    // shift items in carousel to the left
     $('#shift_left').click(function(e) {
         e.preventDefault();
         var divs = ['#one', '#two', '#three', '#four']
