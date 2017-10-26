@@ -1,21 +1,21 @@
 // Draw table with items in cart 
 function loadCartItems() {
     var keys = Object.keys(localStorage);
-    for (var i = 0; i < keys.length-1; i++){
-
+    for (var i = 0; i < keys.length; i++){
         var key = keys[i]
-        var item = JSON.parse(localStorage.getItem(key));
+        if (key != 'wishlist') {
+            var item = JSON.parse(localStorage.getItem(key));
+            var id = item.id;
+            var product = item.product;
+            var size = item.size;
+            var color = item.color;
+            var quantity = item.quantity;
+            var price = item.price;
 
-        var id = item.id;
-        var product = item.product;
-        var size = item.size;
-        var color = item.color;
-        var quantity = item.quantity;
-        var price = item.price;
-
-        var html = "<tr><td class='id_column'>" + id + "</td><td>" + product + "</td><td>" + size + "</td><td>" + color + "</td><td>" + quantity + "</td><td>$" + price + "</td><td class='remove'>x</td></tr>"
- 
-        $("#my_table").append(html);
+            var html = "<tr><td class='id_column'>" + id + "</td><td>" + product + "</td><td>" + size + "</td><td>" + color + "</td><td>" + quantity + "</td><td>$" + price + "</td><td class='remove'>x</td></tr>"
+     
+            $("#my_table").append(html);
+        }
     }
 }
 
@@ -25,16 +25,17 @@ function loadWishlistItems() {
     if (wishlist) {
         var keys = Object.keys(wishlist);
         for (var i=0; i < keys.length; i++) {
+            var key = keys[i]
+            if (key != 'wishlist') {
+                var item = JSON.parse(wishlist[key]);
+                var product = item.product;
+                var size = item.size;
+                var color = item.color;
 
-            var item = JSON.parse(wishlist[keys[i]]);
-            var product = item.product;
-            var size = item.size;
-            var color = item.color;
+                var html = "<tr><td>" + product + "</td><td>" + size + "</td><td>" + color + "</td></tr"
 
-            var html = "<tr><td>" + product + "</td><td>" + size + "</td><td>" + color + "</td></tr"
-
-            $('#wishlist').append(html)
-
+                $('#wishlist').append(html)
+            }
         }
     }
 }
@@ -43,11 +44,13 @@ function loadWishlistItems() {
 function getCartSize() {
     var keys = Object.keys(localStorage);
     var total = 0;
-    for (var i = 0; i < keys.length-1; i++){
+    for (var i = 0; i < keys.length; i++){
         var key = keys[i]
-        var item = JSON.parse(localStorage.getItem(key));
-        var quantity = item.quantity;
-        total += quantity
+        if (key != 'wishlist') {
+            var item = JSON.parse(localStorage.getItem(key));
+            var quantity = item.quantity;
+            total += quantity
+        }
     }
     return total
 }
@@ -79,12 +82,14 @@ function getPrice(product, size, color) {
 function getTotalPrice() {
     var keys = Object.keys(localStorage);
     var total = 0;
-    for (var i = 0; i < keys.length-1; i++){
+    for (var i = 0; i < keys.length; i++){
         var key = keys[i]
-        var item = JSON.parse(localStorage.getItem(key));
-        var quantity = item.quantity;
-        var price = item.price
-        total += quantity * price
+        if (key != 'wishlist') {
+            var item = JSON.parse(localStorage.getItem(key));
+            var quantity = item.quantity;
+            var price = item.price
+            total += quantity * price
+        }
     }
     return total
 }
